@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Mossline — Measure the Living Planet</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,6 +25,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  -webkit-tap-highlight-color: transparent;
 }
 
 html {
@@ -37,6 +38,7 @@ body {
   color: var(--ink);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  width: 100%;
 }
 
 a {
@@ -80,6 +82,7 @@ a {
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   padding: 22px 34px;
+  transition: padding .3s ease;
 }
 
 .nl {
@@ -167,6 +170,7 @@ a {
 #story {
   position: relative;
   height: 640vh;
+  width: 100%;
 }
 
 .stage {
@@ -385,6 +389,7 @@ a {
   right: 0;
   text-align: center;
   top: 12.5vh;
+  padding: 0 16px;
   will-change: transform, filter, opacity;
 }
 
@@ -393,7 +398,7 @@ a {
   line-height: .92;
   letter-spacing: -.045em;
   margin-top: 18px;
-  font-size: clamp(44px, 6vw, 96px);
+  font-size: clamp(38px, 6vw, 96px);
   color: var(--ink);
 }
 
@@ -545,12 +550,13 @@ a {
   width: min(820px, 90vw);
   color: #fff;
   text-align: center;
+  padding: 0 16px;
 }
 
 .vis h2 {
   font-weight: 500;
-  font-size: clamp(34px, 4.6vw, 70px);
-  line-height: 1;
+  font-size: clamp(30px, 4.6vw, 70px);
+  line-height: 1.05;
   letter-spacing: -.04em;
   margin: 18px 0 20px;
   text-shadow: 0 2px 40px rgba(10,30,15,.55), 0 1px 3px rgba(10,30,15,.3);
@@ -563,7 +569,7 @@ a {
 }
 
 .vis p {
-  font-size: 16px;
+  font-size: clamp(14px, 2.2vw, 16px);
   line-height: 1.45;
   text-shadow: 0 1px 14px rgba(10,30,15,.7);
 }
@@ -574,8 +580,8 @@ a {
   left: 34px;
   top: 14vh;
   width: min(560px, 86vw);
-  font-size: clamp(20px, 1.9vw, 29px);
-  line-height: 1.16;
+  font-size: clamp(18px, 1.9vw, 29px);
+  line-height: 1.18;
   letter-spacing: -.02em;
   text-shadow: 0 0 24px rgba(255,255,255,.8);
   color: var(--ink);
@@ -647,7 +653,7 @@ a {
 .hsl {
   padding: 6px 9px;
   border-radius: 4px;
-  background: rgba(246,248,245,.72);
+  background: rgba(246,248,245,.78);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   font-family: var(--mono);
@@ -682,8 +688,8 @@ a {
   left: 34px;
   top: 13vh;
   max-width: 380px;
-  font-size: clamp(22px, 2vw, 30px);
-  line-height: 1.08;
+  font-size: clamp(20px, 2vw, 30px);
+  line-height: 1.1;
   letter-spacing: -.025em;
   text-shadow: 0 0 24px rgba(255,255,255,.8);
   color: var(--ink);
@@ -889,8 +895,8 @@ a {
 
 .sh2 h2 {
   font-weight: 500;
-  font-size: clamp(34px, 3.9vw, 58px);
-  line-height: 1;
+  font-size: clamp(30px, 3.9vw, 58px);
+  line-height: 1.05;
   letter-spacing: -.04em;
   max-width: 640px;
   margin-top: 20px;
@@ -985,7 +991,7 @@ a {
 }
 
 .sbo h3 {
-  font-size: 25px;
+  font-size: 24px;
   font-weight: 500;
   letter-spacing: -.03em;
   line-height: 1.05;
@@ -1036,6 +1042,7 @@ a {
   margin-top: 8px;
 }
 
+/* RESPONSIVE & MOBILE OPTIMIZATIONS */
 @media (max-width: 820px) {
   #nav {
     padding: 16px 18px;
@@ -1053,6 +1060,13 @@ a {
   .hw {
     white-space: normal;
   }
+  .hc {
+    top: 14vh;
+  }
+  .hc h1 {
+    font-size: clamp(32px, 8vw, 56px);
+    line-height: 1;
+  }
   .hud {
     left: 50%;
     top: 66%;
@@ -1061,29 +1075,47 @@ a {
   .cap {
     left: 18px;
     right: 18px;
-    bottom: 70px;
+    bottom: 64px;
+    font-size: 10.5px;
+    line-height: 1.6;
   }
   .sh {
     right: 18px;
-    bottom: 24px;
+    bottom: 22px;
+    font-size: 10px;
+  }
+  .acct {
+    left: 18px;
+    right: 18px;
+    width: auto;
+    top: 12vh;
+    font-size: clamp(16px, 4.2vw, 22px);
+    line-height: 1.25;
   }
   .cred {
     left: 18px;
     top: 11vh;
-    max-width: 80vw;
+    max-width: 86vw;
+    font-size: clamp(20px, 4.5vw, 26px);
   }
   .cc {
     left: 18px;
     top: auto;
     bottom: 6vh;
     width: 210px;
+    padding: 14px;
   }
   .feats {
     right: 18px;
     top: auto;
     bottom: 6vh;
-    width: 45vw;
+    width: 44vw;
     font-size: 9.5px;
+    padding: 4px 12px;
+  }
+  .fr {
+    grid-template-columns: 24px 1fr;
+    padding: 8px 0;
   }
   .fa {
     display: none;
@@ -1093,13 +1125,103 @@ a {
   }
   .sc3 {
     grid-template-columns: 1fr;
+    gap: 16px;
   }
   .scd {
     height: 340px;
   }
+  /* On touch devices, keep card body text visible by default for better mobile UX */
+  .sbo p {
+    max-height: 80px;
+    opacity: 0.9;
+    margin-top: 6px;
+  }
   .ss {
     grid-template-columns: 1fr 1fr;
     row-gap: 24px;
+  }
+  .snum {
+    font-size: 34px;
+  }
+}
+
+/* SMALL PHONES (<= 480px) */
+@media (max-width: 480px) {
+  #nav {
+    padding: 14px 14px;
+  }
+  .nl {
+    font-size: 18px;
+    gap: 7px;
+  }
+  .nl svg {
+    width: 22px;
+    height: 22px;
+  }
+  .nt {
+    font-size: 10.5px;
+    gap: 8px;
+  }
+  .ns {
+    width: 18px;
+    height: 18px;
+    font-size: 13px;
+  }
+  .hc {
+    top: 15vh;
+  }
+  .hc h1 {
+    font-size: clamp(28px, 8.5vw, 42px);
+  }
+  .vis h2 {
+    font-size: clamp(24px, 7vw, 36px);
+  }
+  /* Hotspots positioned and scaled for small phone displays */
+  .hsl {
+    font-size: 9.5px;
+    padding: 4px 7px;
+  }
+  .hsd {
+    width: 18px;
+    height: 18px;
+  }
+  .hsd::before {
+    width: 8px;
+  }
+  .hsd::after {
+    height: 8px;
+  }
+  /* Stacked Station layout on very narrow screens so card and features don't clash */
+  .cc {
+    width: calc(100% - 28px);
+    left: 14px;
+    bottom: 22vh;
+    padding: 14px;
+  }
+  .feats {
+    width: calc(100% - 28px);
+    right: auto;
+    left: 14px;
+    bottom: 2vh;
+    font-size: 9px;
+  }
+  .fr {
+    padding: 6px 0;
+  }
+  .sh2 h2 {
+    font-size: 26px;
+  }
+  .sh2 p {
+    font-size: 13.5px;
+  }
+  .scd {
+    height: 310px;
+  }
+  .sbo h3 {
+    font-size: 21px;
+  }
+  .snum {
+    font-size: 30px;
   }
 }
 </style>
@@ -1207,8 +1329,8 @@ ELEV 842 M</pre>
     <p class="acct" id="acct"></p>
     <div class="hs" id="h0" style="left:12%;top:58%"><div class="hsd"></div><div class="hsl"><span>Soil carbon</span><em>+3.8 t/ha</em></div></div>
     <div class="hs" id="h1" style="left:33%;top:41%"><div class="hsd"></div><div class="hsl"><span>Canopy moisture</span><em>71 % RH</em></div></div>
-    <div class="hs" id="h2" style="left:70%;top:66%"><div class="hsd"></div><div class="hsl"><span>Species index</span><em>214 taxa</em></div></div>
-    <div class="hs" id="h3" style="left:83%;top:47%"><div class="hsd"></div><div class="hsl"><span>Microclimate</span><em>14.2 &#xB0;C</em></div></div>
+    <div class="hs" id="h2" style="left:68%;top:66%"><div class="hsd"></div><div class="hsl"><span>Species index</span><em>214 taxa</em></div></div>
+    <div class="hs" id="h3" style="left:76%;top:47%"><div class="hsd"></div><div class="hsl"><span>Microclimate</span><em>14.2 &#xB0;C</em></div></div>
   </div>
 
   <!-- Layer L4: Field Station 07 & Features -->
@@ -1366,6 +1488,7 @@ ELEV 842 M</pre>
   }
   layoutHero();
   window.addEventListener('resize', () => { layoutHero(); resizeCv(); });
+  window.addEventListener('orientationchange', () => { setTimeout(() => { layoutHero(); resizeCv(); }, 150); });
   if (document.fonts && document.fonts.ready) { document.fonts.ready.then(layoutHero); }
 
   // Canvas Sizing
@@ -1449,7 +1572,7 @@ ELEV 842 M</pre>
   else vid.addEventListener('loadeddata', initVid, { once: true });
   vid.load();
 
-  // Pointer Movement
+  // Pointer & Touch Movement
   let mx = 0, my = 0;
   let sx = 0, sy = 0;
   window.addEventListener('pointermove', (e) => {
@@ -1476,9 +1599,10 @@ ELEV 842 M</pre>
     });
   });
 
-  // Card Tilt
+  // Card Tilt (Desktop)
   document.querySelectorAll('.scd').forEach((card) => {
     card.addEventListener('pointermove', (e) => {
+      if (window.innerWidth <= 820) return; // disable 3d tilt on touch/mobile
       const r = card.getBoundingClientRect();
       const x = (e.clientX - r.left) / r.width - 0.5;
       const y = (e.clientY - r.top) / r.height - 0.5;
@@ -1491,7 +1615,7 @@ ELEV 842 M</pre>
   let statsRan = false;
   function checkStats() {
     if (statsRan) return;
-    if (solSect.getBoundingClientRect().top > window.innerHeight * 0.6) return;
+    if (solSect.getBoundingClientRect().top > window.innerHeight * 0.7) return;
     statsRan = true;
     const t0 = performance.now();
     function tick(now) {
