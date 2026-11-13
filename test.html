@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<body>
+<video id="v" src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20261106_025717_906b686d-9a9a-4dea-bab4-ae2454f8390e.mp4" muted playsinline crossorigin="anonymous" style="width:2px;height:2px;opacity:0;"></video>
+<script>
+const v = document.getElementById('v');
+console.log('Video created');
+v.addEventListener('loadeddata', () => {
+  console.log('loadeddata fired, duration:', v.duration, 'readyState:', v.readyState);
+  const c = document.createElement('canvas');
+  c.width = 1600; c.height = 900;
+  const ctx = c.getContext('2d');
+  try {
+    ctx.drawImage(v, 0, 0, 1600, 900);
+    c.toBlob((blob) => {
+      console.log('Blob 0 created:', !!blob, blob ? blob.size : 0);
+    }, 'image/jpeg', 0.9);
+  } catch(e) {
+    console.error('Error drawing/blobbing frame 0:', e);
+  }
+
+  if ('requestVideoFrameCallback' in HTMLVideoElement.prototype) {
+    console.log('rVFC supported');
+    let count = 0;
+    function onVFC(now, meta) {
+      count++;
+      console.log('rVFC fired:', count, meta.mediaTime);
+      if (count < 10) v.requestVideoFrameCallback(onVFC);
+    }
+    v.requestVideoFrameCallback(onVFC);
+    v.play().then(() => console.log('play started')).catch(e => console.error('play failed:', e));
+  } else {
+    console.log('rVFC not supported');
+  }
+});
+v.addEventListener('error', (e) => console.error('video error:', v.error));
+</script>
+</body>
+</html>

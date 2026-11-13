@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{font-family:"DM Sans",sans-serif;color:#242521;background:#e9e6df;font-synthesis:none;text-rendering:optimizeLegibility}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+.loader{position:fixed;inset:0;z-index:20;background:#242521;color:#e9e6df;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:14px}
+.loader-mark{font-size:clamp(30px,5vw,64px);letter-spacing:-.08em;font-weight:500}
+.loader-mark span{color:#a5a58d;margin:0 .12em}
+.loader-caption,.eyebrow,.hero-kicker,.section-label,.circle-link,.text-link,.project-number,.project-year,.work-end,.contact-link,footer,.header-note{font-family:"DM Mono",monospace;font-size:10px;letter-spacing:.08em}
+.site-header{height:76px;padding:0 5.2vw;display:flex;align-items:center;justify-content:space-between;position:absolute;z-index:5;top:0;left:0;width:100%;color:#f0eee8}
+.wordmark{font-size:23px;font-weight:600;letter-spacing:-.09em}.wordmark span{font:9px "DM Mono";vertical-align:top;margin-left:3px}
+.header-note{margin-left:9%;opacity:.8}
+.nav{display:flex;gap:34px;align-items:center}.nav a{font-size:12px;display:flex;align-items:center;gap:4px}
+.menu-toggle{display:none;background:none;border:0;color:inherit}
+.hero{height:min(900px,100svh);min-height:650px;position:relative;color:#f1eee8;overflow:hidden;background:#5a5b50}
+.hero-image,.hero-shade{position:absolute;inset:0}.hero-image img{width:100%;height:115%;object-fit:cover;object-position:center 56%;filter:brightness(.7)}
+.hero-shade{background:linear-gradient(90deg,rgba(22,24,20,.48),rgba(22,24,20,.03) 85%),linear-gradient(0deg,rgba(20,21,18,.28),transparent 48%)}
+.hero-content{position:absolute;left:10.5vw;top:25%;width:80%}
+.hero-kicker{margin:0 0 44px}.hero-kicker span{opacity:.65;margin-left:10px}
+.hero-title{font-size:clamp(76px,12vw,178px);line-height:.79;letter-spacing:-.085em;font-weight:400;margin:0}
+h1 i,h2 i{font-family:"Playfair Display",serif;font-weight:400;letter-spacing:-.08em}
+.hero-bottom{display:flex;justify-content:space-between;align-items:end;margin-top:70px;max-width:670px}
+.hero-bottom p{font-size:14px;line-height:1.6}.circle-link{display:flex;align-items:center;gap:17px;border-bottom:1px solid #ffffff8c;padding-bottom:12px}
+.hero-index{position:absolute;right:5.2vw;bottom:38px;font:10px "DM Mono"}
+.section-pad{padding:125px 10.5vw}
+.section-label{color:#77786b}.section-label span{color:#242521}
+.intro{display:grid;grid-template-columns:1fr 2.2fr;gap:4vw;padding-top:160px;padding-bottom:175px}
+.intro-copy{max-width:850px}.eyebrow{color:#77786b;margin:0 0 35px}
+.intro h2,.services h2,.contact h2{font-size:clamp(46px,7.4vw,105px);font-weight:400;letter-spacing:-.075em;line-height:.98;margin:0;max-width:850px}
+.intro-foot{display:flex;justify-content:space-between;align-items:end;gap:50px;margin-top:52px}
+.intro-foot p{max-width:360px;font-size:14px;line-height:1.8;color:#66675e;margin:0}
+.text-link{display:flex;align-items:center;gap:12px;white-space:nowrap;border-bottom:1px solid #9a9a8d;padding-bottom:9px}
+.work{background:#dedbd3;padding-top:120px;padding-bottom:110px}
+.work-heading{display:flex;justify-content:space-between;align-items:start;margin-bottom:70px}
+.work-heading>p{font:italic 20px/1.4 "Playfair Display";margin:0;color:#696a60}
+.project-grid{display:grid;grid-template-columns:1.15fr .85fr;column-gap:8%;row-gap:95px;align-items:start}
+.project-large{grid-column:1;}.project-small{grid-column:2;margin-top:180px}.project-wide{grid-column:1/3;width:72%;margin:0 auto}
+.image-wrap{overflow:hidden;background:#c9c6bd}.image-wrap img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.project-large .image-wrap{height:520px}.project-small .image-wrap{height:390px}.project-wide .image-wrap{height:480px}
+.project:hover .image-wrap img{transform:scale(1.035)}
+.project-meta{display:flex;justify-content:space-between;align-items:start;padding-top:19px}
+.project-number{color:#77786b}.project-meta h3{font:400 25px "Playfair Display";margin:12px 0 5px}.project-meta p{font-size:11px;color:#77786b;margin:0}
+.project-year{display:flex;gap:12px;align-items:center;margin-top:4px}
+.work-end{display:flex;justify-content:space-between;margin-top:100px;padding-top:20px;border-top:1px solid #c4c1b9;color:#74756b}
+.work-end a{display:flex;gap:10px;align-items:center;color:#242521}
+.manifesto{height:720px;position:relative;overflow:hidden;color:#f0eee7;background:#4b4e43}
+.manifesto-image,.manifesto-overlay{position:absolute;inset:0}.manifesto-image img{width:100%;height:100%;object-fit:cover;filter:brightness(.55)}
+.manifesto-overlay{background:linear-gradient(90deg,rgba(22,23,19,.45),rgba(22,23,19,.08))}
+.manifesto-content{position:absolute;left:16vw;top:17%}.manifesto-content .eyebrow{color:#d1d0c5}
+.manifesto h2{font-size:clamp(65px,9vw,125px);line-height:.88;letter-spacing:-.08em;font-weight:400;margin:0;overflow:hidden}
+.manifesto-word{display:inline-block}.manifesto-note{font:italic 19px "Playfair Display";margin:45px 0 0 8px}
+.services{display:grid;grid-template-columns:1fr 2.2fr;gap:4vw;padding-top:150px;padding-bottom:160px}
+.services-main h2{margin-bottom:95px}
+.service-row{display:grid;grid-template-columns:45px 1fr 20px;gap:15px;border-top:1px solid #c6c3bb;padding:23px 0 27px;align-items:start}
+.service-row>span{font:10px "DM Mono";color:#858578;padding-top:7px}
+.service-row h3{font:400 22px "Playfair Display";margin:0 0 8px}
+.service-row p{font-size:12px;color:#77786b;margin:0;line-height:1.6}
+.contact{background:#d9d6ce;padding-top:125px;padding-bottom:35px}
+.contact-main{margin:105px 0 150px 25%}.contact h2{font-size:clamp(75px,11vw,155px)}
+.contact-link{display:inline-flex;gap:35px;align-items:center;border-bottom:1px solid #8f9083;padding:15px 0;margin-top:55px}
+footer{border-top:1px solid #c2bfb7;padding-top:25px;display:flex;justify-content:space-between;align-items:center;color:#74756b}
+footer .wordmark{font-family:"DM Sans";color:#242521}footer div{display:flex;gap:25px}footer a{display:flex;align-items:center;gap:4px}
+@media(max-width:800px){
+ .site-header{height:68px;padding:0 6vw}.header-note{display:none}.menu-toggle{display:block;z-index:8}.nav{display:none;position:absolute;top:0;right:0;width:100%;height:100svh;background:#242521;color:#e9e6df;flex-direction:column;justify-content:center;gap:28px;font:24px "Playfair Display"}.nav.open{display:flex}.nav a{font-size:27px}
+ .hero{min-height:700px;height:92svh}.hero-content{left:7vw;top:27%;width:86%}.hero-title{font-size:clamp(74px,17vw,125px)}.hero-kicker{font-size:8px;line-height:1.7;margin-bottom:40px}.hero-bottom{margin-top:65px;gap:20px}.hero-bottom p{font-size:12px}.circle-link{font-size:8px;gap:7px}
+ .section-pad{padding:85px 7vw}.intro,.services{grid-template-columns:1fr;gap:55px}.intro{padding-top:100px;padding-bottom:110px}.intro h2,.services h2{font-size:clamp(50px,12vw,80px)}.intro-foot{display:block;margin-top:35px}.intro-foot p{margin-bottom:30px}
+ .work-heading{margin-bottom:45px}.work-heading>p{font-size:16px}.project-grid{display:block}.project{margin:0 0 55px!important;width:100%}.project-large .image-wrap,.project-small .image-wrap,.project-wide .image-wrap{height:clamp(280px,75vw,440px)}.project-wide{width:100%}.work-end{margin-top:50px;font-size:8px}
+ .manifesto{height:600px}.manifesto-content{left:7vw;top:22%}.manifesto h2{font-size:clamp(60px,13vw,100px)}
+ .services{padding-top:100px;padding-bottom:100px}.services-main h2{margin-bottom:60px}.contact-main{margin:90px 0 110px 5%}.contact h2{font-size:clamp(68px,15vw,110px)}footer{flex-wrap:wrap;gap:22px;font-size:8px}footer div{gap:12px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
